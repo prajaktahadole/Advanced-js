@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://lms.masaischool.com/files/124421/download -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Student Constructor function</title>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+    <form>
+        <input class="name" type="text" placeholder=" Enter your name">
+        <input class="num" type="number" placeholder="Enter your number">
+        <input class="city" type="text" placeholder="Enter your city">
+        <button type="submit">submit</button>
+    </form>
+
+    
+
+
+
+<script>
+        var Data = [];
+
+        function student_constructor(name, num, city) { 
+            this.name = name;
+            this.num = num;
+            this.city = city;   
+        };
+        
+        document.querySelector("form").addEventListener("submit", student_data); 
+
+        function student_data(event){
+        event.preventDefault();
+
+        var person = new student_constructor(document.querySelector(".name").value, 
+                                            document.querySelector(".num").value,
+                                            document.querySelector(".city").value);
+                                                                                 
+            Data.push(person);
+            console.log(Data);
+            localStorage.setItem("All_Student_data", JSON.stringify(Data)); 
+        };
+
+       
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<script>
+
+     function student_constructor(nm, num, city){
+
+            this.nm = nm
+            this.num = num
+            this.city = city
+           
+    }
+
+            let z1 = new student_constructor("priya", 12 , "pune")    
+            console.log("z1 :", z1 ); 
+            let z2 = new student_constructor("riya", 12 , "mumbai")    
+            console.log("z2 :", z2 );
+
+
+</script> -->
+
+
+   
+           
+<!-- <script>
+
+    document.querySelector("form").addEventListener("submit", student_data); 
+
+    function student_data(name, num, city){
+      
+        var name = document.querySelector(".nm").value;
+        var num = document.querySelector(".num").value;
+        var city = document.querySelector(".city").value;
+
+    }
+
+              var z1 = new student_data()    
+            console.log("z1 :", z1 );
+</script>  -->
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

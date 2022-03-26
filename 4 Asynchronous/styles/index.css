@@ -1,0 +1,72 @@
+body{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+
+
+#slideshow{
+   
+    /* border: 1px solid red; */
+    width: 90%;
+    height: 450px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#slideshow_images{
+    width: 100%;
+    height: 100%;
+}
+
+
+#movies{
+    width: 100%;
+    /* border: 1px solid red; */
+    margin: auto;
+}
+#Container-movies{
+    width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+#Container-movies> div{
+    /* border: 1px solid blue; */
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+}
+
+
+.image1{
+    width: 100%;
+    height: 80%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Name{
+    color:white;
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 15px;
+
+}
+.div2{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: -10px;
+    margin-bottom: -17px;
+}
+
+#sort-buttons{
+    text-align: right;
+    margin-right: 75px;
+    margin-bottom: 20px;
+}

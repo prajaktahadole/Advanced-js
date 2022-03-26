@@ -1,0 +1,30 @@
+#nav-bar{
+    border: 1px solid  rgb(28,41,56);;
+    width: 90%;
+    height: 50px;
+    /* background-color: rgb(122, 123, 124); */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0 20px;
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.right{
+    display: flex;
+    width: 35%;
+    /* border: 1px solid  rgb(28,41,56); */
+    justify-content: space-around;
+    padding-left: 65%  
+}
+
+a{
+    color: white;
+}
+
+#submit{
+    width: 30%;
+}

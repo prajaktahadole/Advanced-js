@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st</title>
+    
+    <style>
+        body{
+            background: url("https://media.istockphoto.com/photos/gorgeous-purple-sunset-view-of-the-small-island-picture-id1074651332?k=20&m=1074651332&s=612x612&w=0&h=1wszKG6_HMCLg8EqQ123u1yC_v2BhSl-A_cQBGmYl6Y=");
+            background-size: cover;
+            width: 100%;
+        }
+
+        #container{
+            /* border: 1px solid red; */
+            margin-left: 50px;
+            margin-right: 50px;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        #search{
+            width: 60%;
+            /* border: 1px solid blue; */
+            height: 50px;
+            text-align: center;
+            margin: auto;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        #city{
+            width: 300px;
+            height: 30px;
+        }
+                
+         #main{
+            display: flex;
+            margin: auto;
+            /* border: 1px solid red; */
+            width: 60%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+   
+    <div id="search" >
+        <input type="text" id="city" placeholder=" city">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+   <div id="main">
+
+    <div id="container"></div>
+
+    <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" 
+            frameborder="0" scrolling="no"
+             marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">adding google map to website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+     
+   </div>
+
+   
+    
+    
+</body>
+</html>
+
+<script src="1.js"></script>

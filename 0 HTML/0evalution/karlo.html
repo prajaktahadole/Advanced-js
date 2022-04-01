@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>karlo</title>
+</head>
+
+<style>
+    #container{
+        width: 55%;
+        display: flex;
+       
+    }
+    #input{
+        width: 35%;
+     
+    }
+    #display{
+        width: 60%;
+       
+    }
+
+    section{
+        width: 100%;
+    }
+
+
+</style>
+<body>
+    <div id="container">
+        <div id="input">
+            <form>
+                <h4>Category</h4>
+                <select id="Category">
+                    <option value="">Select Category</option>
+                    <option value="Refund">Refund</option>
+                    <option value="Item Missing" >Item Missing</option>
+                    <option value="Order status" >Order status</option>
+                    <option value="Delivery" >Delivery</option>
+                    <option value="feedback" >Feedback</option>
+                </select>
+                <h4>Ticket details</h4>
+                <textarea id="body" name= "body" rows="5" cols="33"></textarea>
+                <h4>Date</h4>
+                <input id="dat" type="date">
+                <h4>Ticket Number</h4>
+                <input id="numb" type="number"; placeholder="ticket_no">
+                <input type="submit" value="Submit">
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>num</th>
+                        <th>Category</th>
+                        <th>Ticket details</th>
+                        <th>Date</th>
+                        <th>Ticket Number</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="display"></div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+        document.querySelector("form").addEventListener("submit",  productdetails);
+        var detailArr = JSON.parse(localStorage.getItem("Result")) || [];
+
+        window.addEventListener("load" ,function(){
+            table(detailArr);
+        })
+
+        function productdetails(event){
+
+            event.preventDefault();
+            var Category = document.querySelector("#Category").value;
+            var Num = document.querySelector("#numb").value;
+            var inpdet = document.querySelector("#body").value;
+            var Date = document.querySelector("#dat").value;
+          
+
+            console.log(Category, Num, inpdet, Date);
+            
+            var productlist = {
+            Category : Category,
+            Num : Num,
+            inpdet : inpdet,
+            Date : Date
+        }
+                    
+            detailArr.push(productlist);
+            console.log(detailArr);
+            localStorage.setItem("Result", JSON.stringify(detailArr));
+            table(detailArr);
+        
+        }
+
+            function table(detailArr){
+                document.querySelector("tbody").textContent = "";
+                console.log(detailArr);
+                detailArr.map(function(item){
+               
+               var tr = document.createElement("td");
+
+               var td1 = document.createElement("td")
+               td1.textContent= item.Category;
+
+               var td2 = document.createElement("td")
+               td2.textContent= item.Num;
+
+               var td3 = document.createElement("td")
+               td3.textContent= item.inpdet;
+
+               var td4 = document.createElement("td")
+               td4.textContent= item.Date;
+               tr.append(td1, td2, td3 , td4)
+               document.querySelector("tbody").append(tr);
+            })
+            }
+            
+            
+               
+            
+
+
+
+</script>
+
+
+

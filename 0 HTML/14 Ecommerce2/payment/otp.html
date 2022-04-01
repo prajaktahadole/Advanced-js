@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <title>OTP</title>
+    <style>
+        body
+        {
+            margin: 0px;
+        }
+        #otpcont
+        {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            height: 300px;
+            margin: auto;
+            gap: 20px;
+        }
+        input
+        {
+            
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 100%;
+            height: 30px;
+            margin-top: 10px;
+        }
+        h2
+        {
+            text-align: center;
+        }
+        #verify
+        {
+            
+            background-color: red;
+            font-weight: bold;
+            border: 2px solid white;
+            height: 50px;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <h2>Otp Verification</h2>
+    <div id="otpcont">
+        <input type="Number" placeholder="Enter Otp Here" autocomplete="off" autofocus required maxlength="4">
+        <input onclick="change()" onclick="alert('Payment Successfull')"  id="verify" type="submit" value="Verify">
+    </div>
+</body>
+
+</html>
+
+<script>
+     document.getElementById("verify").onclick = function () {
+        alert('Payment Successfull')
+        location.href = "successfull.html";
+     };
+</script>

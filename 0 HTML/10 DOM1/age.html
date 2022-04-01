@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://lms.masaischool.com/files/101112/download -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age</title>
+
+</head>
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+    <select id="Gender">
+        <option value=""> </option>
+        <option value="male"> Male </option>
+        <option value="female"> Female </option>
+    </select>
+    <input type="number" placeholder="year of birth">
+    <button onclick="CheckAge()">Validate</button>
+
+
+
+
+<script>
+
+        function CheckAge(){
+            var num = document.querySelector("input").value;
+            var age = 2022 - num;
+            var gender =  document.querySelector("#Gender").value; 
+            console.log(age , gender);
+
+            if(((age > 18) && (gender === "female"))  || ((age > 21) && (gender === "male"))){
+                alert("your age is legal to marry")
+            }
+            else{
+                alert("your age is not legal to marry")
+            }
+        }
+
+</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

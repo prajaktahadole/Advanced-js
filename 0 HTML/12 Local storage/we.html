@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://lms.masaischool.com/files/105273/download -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        tr,th,td{
+            border: 1px solid;
+        } 
+    </style>
+
+</head>
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+    <form>
+        <input id="item" type="text" placeholder="enter item">
+        <input id="qyt" type="number" placeholder="Enter Quantity">
+        <input type="submit" value="Add Task">
+    </form>
+    
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Delete Item</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+
+<script>
+    document.querySelector("form").addEventListener("submit", todolist);  
+
+    var todoArr =JSON.parse(localStorage.getItem("todoTodo")) || []
+    //createTable(todoArr);
+    //or
+    window.addEventListener("load", function(){
+        createTable(todoArr);
+    })
+    function todolist(event){
+        event.preventDefault();
+        var item = document.querySelector("#item").value;
+        var qyt = document.querySelector("#qyt").value;
+
+        console.log(item, qyt);
+ 
+        var taskList ={ itemName:item, itemQyt : qyt};
+        todoArr.push(taskList);
+        localStorage.setItem("todoTodo", JSON.stringify(todoArr));
+        createTable(todoArr);
+    }
+
+    function createTable(todoArr){
+        document.querySelector("tbody").innerHTML = "";
+        console.log(todoArr); 
+        todoArr.map(function (elem){
+        var tr = document.createElement("tr");
+
+        var td1 = document.createElement("td");
+        td1.textContent = elem.itemName;
+
+        var td2 = document.createElement("td");
+        td2.textContent = elem.itemQyt;
+        
+        var td3 = document.createElement("td");
+        td3.textContent = "Delete";
+
+        tr.append(td1, td2, td3);
+
+        document.querySelector("tbody").append(tr);
+        });
+     }
+ 
+</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

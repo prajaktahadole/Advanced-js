@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://lms.masaischool.com/files/105517/download -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bozaz</title>
+    <style>
+        #container{
+            width: 60%;
+            margin: auto;
+            display: flex;
+        }
+        #add{
+            width: 35%;
+            /* border: 1px solid blue; */
+            margin-right: auto;
+        }
+        #info{
+            width: 60%;
+            /* border: 1px solid green; */
+            /* margin: auto; */
+        }
+        h1{
+            color: rgb(78, 159, 206);
+        }
+
+        h3{
+            margin: 5px;
+        }
+        input{
+            width: 95%;
+            padding: 7px;
+        }
+        select{
+            width: 100%;
+            padding: 7px;
+        }
+
+       #butt{
+            width:25%;
+            margin: 3% ;
+            background-color: blue;
+            color: white;
+        }
+        th{
+            border: 1px solid;
+            padding: 15px
+        }
+        
+
+    </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+  <div id="container">
+    <div id="add">
+        <h1>Add Product</h1>
+        <hr>
+        <form>
+            <h3>Category</h3>
+            <select id="ProductCategory">
+                <option value="">Product Category </option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Home appliance">Home appliance</option>
+                <option value="Book">Book</option>
+            </select>
+            <h3>Title</h3>
+            <input id="productTitle" placeholder="Product Name">
+            <h3>Description</h3>
+            <input id="productDes" placeholder="Product Description">
+            <h3>Price</h3>
+            <input id="Productprice" placeholder="Product Price">
+            <input type="submit" value="Add Task" id="butt">
+           </form>
+    </div>
+
+    <div id="info">
+        <h1>Product Info</h1>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div> 
+
+  </div>
+
+
+
+<script>
+
+    document.querySelector("form").addEventListener("submit", productdetails);
+    var detailArr = JSON.parse(localStorage.getItem("FinalArray")) || [];
+
+    window.addEventListener("load", function(){
+        createTable(detailArr);
+    })
+    
+  
+    function productdetails(event){
+        event.preventDefault();
+        var num = 0; num++;
+        var Category =  document.querySelector("#ProductCategory").value;
+        var Name = document.querySelector("#productTitle").value;
+        var Description  = document.querySelector("#productDes").value;
+        var Price = document.querySelector("#Productprice").value;
+    
+        console.log(num , Category, Name, Description, Price);
+
+        var Productlist = {
+            index : num,
+            Category : Category,
+            Name : Name,
+            Description : Description,
+            Price : Price
+        }
+        detailArr.push(Productlist);
+        console.log(detailArr);
+        localStorage.setItem("FinalArray", JSON.stringify(detailArr));
+        createTable(detailArr);
+    }
+
+
+
+        function createTable(detailArr){
+        document.querySelector("tbody").innerHTML = "";
+        console.log(detailArr); 
+        detailArr.map(function (elem){
+        var tr = document.createElement("tr");
+
+        var td1 = document.createElement("td");
+        td1.textContent = elem.index;
+        
+        var td2 = document.createElement("td");
+        td2.textContent = elem.Category;
+
+        var td3 = document.createElement("td");
+        td3.textContent = elem.Name;
+
+        var td4 = document.createElement("td");
+        td4.textContent = elem.Description;
+        
+        var td5 = document.createElement("td");
+        td5.textContent = elem.Price;
+
+        tr.append(td1, td2, td3, td4, td5);
+
+        document.querySelector("tbody").append(tr);
+        });
+    }
+
+
+
+
+ 
+
+    
+
+
+</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

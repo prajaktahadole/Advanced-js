@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://lms.masaischool.com/files/102932/download -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+
+    <style>
+        #container{
+            display: flex;
+            /* border: 1px solid black; */
+            
+        }
+
+        #container> div{
+            /* border: 1px solid blue; */
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        p,h3{
+            padding: 15px;
+        }
+
+        h4{
+            text-align: right;
+            margin: 0px;
+            color: grey;
+            text-decoration: line-through;
+
+        }
+    </style>
+</head>
+
+
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+    <div id="container">
+        <!-- <div >
+            <img src="https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp"">
+        </div>
+        <div>
+            <img src="https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp"">
+        </div>
+        <div>
+            <img src="https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp"">
+        </div> 
+        <div>
+            <img src="https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp"">
+        </div>   -->
+    <div><img src="./Cardall_files/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp"><p>LATEST MEN’S SNEAKER</p><h3>$25.00</h3><h4>$95.00</h4></div><div><img src="./Cardall_files/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp"><p>LATEST MEN’S SNEAKER</p><h3>$35.00</h3><h4>$100.00</h4></div><div><img src="./Cardall_files/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp"><p>LATEST MEN’S SNEAKER</p><h3>$35.00</h3><h4>$100.00</h4></div><div><img src="./Cardall_files/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp"><p>LATEST MEN’S SNEAKER</p><h3>$35.00</h3><h4>$100.00</h4></div></div>
+    
+
+
+
+<script>
+        var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+];
+
+    data.map(function(item){
+        
+        var div = document.createElement("div")
+        
+        var img = document.createElement("img");
+        img.setAttribute("src", item.imgUrl);
+     
+
+        var nm = document.createElement("p");
+        nm.textContent = item.name;
+
+        var prc = document.createElement("h3");
+        prc.textContent = item.price;
+
+        var strPrice = document.createElement("h4");
+        strPrice.textContent = item.strikedOffPrice;
+
+        
+    div.append(img , nm, prc, strPrice);
+    
+    document.querySelector("#container").append(div);
+      
+    });
+
+
+      
+</script>
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

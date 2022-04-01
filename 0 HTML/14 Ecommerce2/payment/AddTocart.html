@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add to Cart</title>
+</head>
+<body>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    * {
+      border: 0px;
+    }
+    /* .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    } */
+
+    
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 1px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    .form-container {
+      
+      width: 450px;
+      background-color: white ;
+      height: 740px;
+      overflow: scroll;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      padding: 20px;
+
+    }
+    .cancel {
+      background-color: rgba(255, 255, 255, 0);
+      color: black;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    
+    }
+    
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    } 
+
+    .carttitle{
+
+        font-family: lato;
+        font-size: 20px;
+        font-weight: 700;
+        line-height:30px;
+    }
+    .summary-div1{
+        background-color:rgb(65, 117, 5);
+        font-family : Lato;
+        font-size:15px;
+        font-weight:400;
+        line-height:22.5px;
+        color: white;
+        text-align: center;
+       
+    }
+
+    .cartNme1{
+        font-family: lato;
+        font-size:15px;
+        font-weight:700;
+        padding-left: 10px;
+
+    }
+    .cartflex1{
+        display: flex;
+        margin-top: -20px; 
+        padding-left: 10px;
+        /* border: 1px solid red;    */
+    }
+
+    .cp1{
+        margin-right: 15px;
+        border: 1px solid;
+        font-family : Lato;
+        font-size:13px;
+        font-weight:400;
+        line-height:19.5px;
+    }
+
+    .cp3{
+        margin-right: 10px;
+        color:rgb(228, 29, 54);
+    }
+
+    #Container-cart{
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding-top: 1.5px;
+        margin-bottom: 10px;
+    }
+
+    #billdetails{
+      border: 1px dotted;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      
+    }
+
+    #billdetails>div{
+      display: flex;
+      justify-content: space-between;
+      font-family : Lato;
+      font-size:12px;
+      font-weight:400;
+      line-height:18px;
+      margin:7px 0px;
+      margin-bottom: -15px;
+     
+    }
+
+  </style>
+  
+</body>
+</html>
+
+<h2>Licious HomePage</h2>
+<button class="open-button" onclick="openForm()">Cart</button>
+<div class="form-popup" id="myForm">
+  <form class="form-container">
+    
+        <button type="button" class="cancel" onclick="closeForm()">✘</button>
+
+        <h1 class="carttitle">Order Summary</h1>
+        <div class="summary-div1"><h3>Free delivery on all orders above 749</h3></div>
+          <div id="Container-cart"></div>   
+          
+          <div id="billdetails">
+            <h3>BILL DETAILS</h3>
+            <div>
+              <p>Subtotal</p>
+              <p id="total"></p>
+            </div>
+            <div>
+              <p>Delivery Charges</p>
+              <p>39</p>
+            </div>
+            <div id="finaltotal">
+              <p>Discount</p>
+              <p></p>
+            </div>
+           
+            <div>
+              <h3>Total</h3>
+              <h4></h4>
+            </div>
+            
+          </div>
+        
+
+        
+  </form>
+</div>
+
+<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+
+
+   
+  var cartarr = JSON.parse(localStorage.getItem("cartitems"));
+    
+    console.log(cartarr);
+
+    cartarr.map(function(item){
+
+            var div = document.createElement("div");
+
+            var megaName = document.createElement("p");
+            megaName.textContent = item.name;
+            megaName.setAttribute("class", "cartNme1")
+
+            var divWt = document.createElement("div");
+            divWt.setAttribute("class" , "cartflex1")
+
+            var cp1 = document.createElement("p");
+            cp1.textContent = item.netWt;
+            cp1.setAttribute("class" , "cp1")
+
+            var cp3 = document.createElement("p");
+            cp3.textContent = item.price;
+            cp3.setAttribute("class" , "cp3")
+
+            divWt.append(cp1, cp3);
+
+            divcarthr = document.createElement("hr")
+            divcarthr.setAttribute("class" , "divcarthr")
+
+
+            var megabutton = document.createElement("button");
+            megabutton.textContent = "ADD TO CART";
+            //
+            megabutton.addEventListener("click", function(){
+                addTocart(item);
+            
+            });
+
+
+            div.append( megaName,  divWt, divcarthr);
+
+            document.querySelector("#Container-cart").append(div)
+
+            })
+
+
+            var total = cartarr.reduce(function (acc,cv){
+              return acc+ Number(cv.price);
+             },0);
+        document.querySelector("#total").textContent = `₹${total}`
+
+    console.log(total)
+</script>

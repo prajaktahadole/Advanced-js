@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://lms.masaischool.com/files/102019/download -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buttonmapping</title>
+
+    
+    <style>
+        button{
+            margin: 15px;
+            padding: 20px;
+            border: 0;
+            color: white;
+            font-size: xx-large;
+        }
+    </style>
+
+</head>
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">  
+
+
+
+<script>
+
+    var button = [
+    { name : "Primary", bgColor: "blue" },
+    { name : "Secondary", bgColor: "green" },
+    { name : "Success", bgColor: "red" },
+    { name : "Danger", bgColor: "orange" },
+    { name : "Warning", bgColor: "grey" },
+    { name : "Info", bgColor: "cyan" }
+
+    ];
+
+    button.map(function(elem){
+        var btn = document.createElement("button");
+        btn.textContent= elem.name
+        btn.style.backgroundColor= elem.bgColor
+
+        document.querySelector("body").append(btn);
+    });
+
+
+
+    
+
+
+
+
+</script><button style="background-color: blue;">Primary</button><button style="background-color: green;">Secondary</button><button style="background-color: red;">Success</button><button style="background-color: orange;">Danger</button><button style="background-color: grey;">Warning</button><button style="background-color: cyan;">Info</button></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

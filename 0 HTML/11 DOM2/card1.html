@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://lms.masaischool.com/files/102931/download -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card1</title>
+
+    <style>
+        #container{
+            border: 1px solid gray;
+            width: 38%;
+            margin: auto;
+            display: flex;
+            
+        }
+
+        #container > div1{
+            /* border: 1px solid blue;   */
+            width: 100%;
+
+        }
+
+        #container > div2{
+            /* border: 1px solid red;   */
+            padding-bottom: 2%;
+            padding-right: 2%;
+        }
+
+    </style>
+
+
+</head>
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+        <div id="container">
+            <!-- <div id="box1"></div>
+            <div id="box2"></div> -->
+        <div1><img src="./card1_files/150x150" style="height: 100%;"></div1><div2><h1>Alice Liddel</h1><p>Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p><button style="background: blue; color: white;">View Profile</button></div2></div>
+    
+
+
+
+
+<script>
+
+    var div1 = document.createElement("div1")
+
+    var imagee = document.createElement("img");
+    imagee.src = "https://via.placeholder.com/150x150";
+    imagee.style.height = "100%"
+    
+    div1.append(imagee);
+
+    var div2 = document.createElement("div2")
+
+    var head1 = document.createElement("h1");
+    head1.textContent = "Alice Liddel";
+
+    var para = document.createElement("p");
+    para.textContent = "Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc."
+
+    var button = document.createElement("button");
+    button.textContent = "View Profile";
+    button.style.background ="blue";
+    button.style.color ="white";
+
+    div2.append(head1 , para, button)
+
+    document.querySelector("#container").append(div1 , div2);
+
+
+</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

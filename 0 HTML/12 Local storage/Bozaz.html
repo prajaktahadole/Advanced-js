@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://lms.masaischool.com/files/105517/download -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +12,10 @@
         }
         #add{
             width: 35%;
-            /* border: 1px solid blue; */
             margin-right: auto;
         }
         #info{
             width: 60%;
-            /* border: 1px solid green; */
-            /* margin: auto; */
         }
         h1{
             color: rgb(78, 159, 206);
@@ -105,10 +101,10 @@
         createTable(detailArr);
     })
     
-  
+    var num = 0;
     function productdetails(event){
         event.preventDefault();
-        var num = 0; num++;
+        num = num+1;
         var Category =  document.querySelector("#ProductCategory").value;
         var Name = document.querySelector("#productTitle").value;
         var Description  = document.querySelector("#productDes").value;

@@ -31,14 +31,12 @@
         <tbody></tbody>
     </table>
 
-
-
 <script>
+
     document.querySelector("form").addEventListener("submit", todolist);  
 
     var todoArr =JSON.parse(localStorage.getItem("todoTodo")) || []
-    //createTable(todoArr);
-    //or
+
     window.addEventListener("load", function(){
         createTable(todoArr);
     })
@@ -75,5 +73,4 @@
         document.querySelector("tbody").append(tr);
         });
      }
- 
 </script>
